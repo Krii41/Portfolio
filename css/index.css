@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap');
+
+:root {
+    --font-main: "Manrope", sans-serif;
+    --font-headers: "DM Sans", sans-serif;
+    --color-primary: #1b263b;
+    --color-secondary: #415a77;
+    --color-accent: #778da9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #e0e1dd;
+    color: var(--color-primary);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba(83, 120, 131, 0.18),
+        transparent 35%
+      );
+    z-index: -1;
+  }
+  
+header {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    max-width: 800px;
+    padding-top: 5em;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto 2em;
+    padding: 1em;
+}
+
+h1 {
+    font-family: var(--font-headers);
+    font-size: clamp(2.5em, 10vw, 5em);
+    display: inline-block; 
+}
+
+span {
+    display: inline-block;
+    font-family: var(--font-headers);
+    color: var(--color-secondary);
+    transition: transform 0.3s ease-in; 
+}
+
+span:hover {
+    transform: translateY(-8px);
+}
+
+.documents {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.documents a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: var(--font-main), sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(1em, 10vw, 2.5em);
+    color: var(--color-accent);
+    opacity: 80%;
+    transition: color 0.4s ease;
+}
+
+.documents a:first-of-type:hover,
+.documents a:hover {
+    color: #1b263b;
+}
+
+.documents a:first-of-type {
+    color: var(--color-secondary);
+}
+
+h2 {
+    text-align: center;
+    margin: 2em 0 3em 0;
+}
+
+@media (max-width: 500px) {
+    .documents {
+        gap: 0;
+    }
+}
+
+/*  decorative flower  */
+
+.dec-flower img{
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: .5em;
+    transform-origin: top center;
+    animation: swing 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    
+    75% {
+        transform: rotate(-2deg);
+    }
+   
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/*  cards  */
+
+.card {
+    max-width: 400px;
+    height: 280px;
+    background-color: rgba(174, 193, 199, 0.8);
+    border-radius: 5px 150px;
+    border: 1px solid rgba(119, 141, 169, 0.8);
+    margin: 2.5em 0;
+    padding: 1.5em 2em;
+    display: flex;
+    align-items: center;
+}
+
+.card:nth-child(odd) {
+    margin-left: auto;
+    border-radius: 150px 5px;
+    background-color: rgba(159, 180, 186, 0.8);
+}
+
+.card:nth-child(odd) .card-links {
+    justify-content: flex-start;
+}
+
+.card:nth-child(odd) .thumbnail {
+    float: right;
+    margin: 0 0 8px 8px;
+}
+
+.card:nth-child(odd) h3 {
+    margin-left: 2em;
+    text-align: right;
+}
+
+.card h3 {
+    margin-bottom: .5em;
+}
+
+.card p {
+    line-height: 1.3;
+    padding-bottom: .5em;
+}
+
+.card a {
+    text-decoration: none;
+    color: #273a51;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+}
+
+.card a:hover {
+    transform: rotateY(380deg);
+}
+
+.card-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+.icon {
+    width: 35px;
+    display: block;
+}
+
+.thumbnail {
+    float: left;
+    border-radius: 8px;
+    margin: 0 8px 8px 0;
+    width: 100px;
+    height: 120px;
+    border: 1px solid var(--color-accent);   
+}
+
+.thumbnail img {
+    display: block;
+    object-fit: contain;    
+}
+
