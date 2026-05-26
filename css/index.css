@@ -26,14 +26,12 @@ body::before {
     position: fixed;
     inset: 0;
     background:
-      radial-gradient(
-        circle at top left,
-        rgba(83, 120, 131, 0.18),
-        transparent 35%
-      );
+        radial-gradient(circle at top left,
+            rgba(83, 120, 131, 0.18),
+            transparent 35%);
     z-index: -1;
-  }
-  
+}
+
 header {
     text-align: center;
     margin: 0 auto;
@@ -49,17 +47,21 @@ main {
     padding: 1em;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1 {
     font-family: var(--font-headers);
     font-size: clamp(2.5em, 10vw, 5em);
-    display: inline-block; 
+    display: inline-block;
 }
 
 span {
     display: inline-block;
     font-family: var(--font-headers);
     color: var(--color-secondary);
-    transition: transform 0.2s ease-in; 
+    transition: transform 0.2s ease-in;
 }
 
 span:hover {
@@ -108,7 +110,7 @@ h2 {
 
 /*  decorative flower  */
 
-.dec-flower img{
+.dec-flower img {
     width: 50px;
     position: absolute;
     top: 0;
@@ -121,17 +123,19 @@ h2 {
     0% {
         transform: rotate(0deg);
     }
+
     25% {
         transform: rotate(2deg);
     }
+
     50% {
         transform: rotate(0deg);
     }
-    
+
     75% {
         transform: rotate(-2deg);
     }
-   
+
     100% {
         transform: rotate(0deg);
     }
@@ -143,6 +147,7 @@ h2 {
     max-width: 400px;
     height: 280px;
     overflow: hidden;
+    isolation: isolate;
     background-color: rgba(174, 193, 199, 0.8);
     border-radius: 5px 150px;
     border: 1px solid rgba(119, 141, 169, 0.8);
@@ -151,7 +156,7 @@ h2 {
     display: flex;
     align-items: center;
     transition: transform 0.4s ease,
-        box-shadow 0.5s ease;
+        box-shadow 0.4s ease;
 }
 
 .card:hover {
@@ -217,11 +222,49 @@ h2 {
     margin: 0 8px 8px 0;
     width: 100px;
     height: 120px;
-    border: 1px solid var(--color-accent);   
+    border: 1px solid var(--color-accent);
 }
 
 .thumbnail img {
     display: block;
-    object-fit: contain;    
+    object-fit: contain;
 }
 
+footer {
+    text-align: center;
+    border: 2px solid var(--color-accent);
+    margin-top: 5em;
+    padding: 5em;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.socials a {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.socials a:nth-child(1):hover {
+    transform: translateY(-8px) rotate(-8deg);
+}
+
+.socials a:nth-child(2):hover {
+    transform: translateY(-10px) rotate(8deg);
+}
+
+.socials a:nth-child(3):hover {
+    transform: translateY(-8px) rotate(-6deg);
+}
+
+footer img {
+    width: 35px;
+    height: 35px;
+}
+
+.author {
+    margin-top: 2em;
+}
