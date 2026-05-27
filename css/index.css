@@ -82,19 +82,21 @@ span:hover {
     font-family: var(--font-main), sans-serif;
     text-transform: uppercase;
     font-weight: 800;
-    font-size: clamp(1em, 10vw, 2.5em);
-    color: var(--color-accent);
+    font-size: clamp(1em, 7vw, 2.5em);
+    color: var(--color-secondary);
     opacity: 80%;
     transition: color 0.4s ease;
+    align-self: flex-end;
 }
 
-.documents a:first-of-type:hover,
+.dot {
+    font-size: 2.5em;
+    align-self: center;
+    color: var(--color-primary);
+}
+
 .documents a:hover {
     color: #1b263b;
-}
-
-.documents a:first-of-type {
-    color: var(--color-secondary);
 }
 
 h2 {
@@ -103,8 +105,20 @@ h2 {
 }
 
 @media (max-width: 500px) {
+
     .documents {
+        margin-top: 2.5em;
+        flex-direction: column;
         gap: 0;
+        padding-bottom: 1em;
+    }
+
+    .documents a {
+        align-self: center;
+    }
+
+    .dot {
+        display: none;
     }
 }
 
