@@ -240,13 +240,13 @@ h2 {
 }
 
 .thumbnail img {
-    display: block;
-    object-fit: contain;
+    display: block;   
+    object-fit: contain; 
 }
 
 footer {
     text-align: center;
-    border: 2px solid var(--color-accent);
+    border-top: 2px solid var(--color-accent);
     margin-top: 5em;
     padding: 5em;
 }
