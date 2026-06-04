@@ -17,19 +17,16 @@
 
 body {
     font-family: var(--font-main);
-    background-color: #e0e1dd;
     color: var(--color-primary);
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
     background:
-        radial-gradient(circle at top left,
-            rgba(83, 120, 131, 0.18),
-            transparent 35%);
-    z-index: -1;
+        linear-gradient(rgba(255, 255, 255, 0.700),
+            rgba(255, 255, 255, 0.700)),
+        url("../assets/images/backg2.svg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 header {
@@ -43,7 +40,7 @@ header {
 
 main {
     max-width: 800px;
-    margin: 0 auto 2em;
+    margin: 0 auto;
     padding: 1em;
 }
 
@@ -282,7 +279,6 @@ h2 {
 footer {
     text-align: center;
     border-top: 2px solid var(--color-accent);
-    margin-top: 5em;
     padding: 5em;
 }
 
@@ -307,6 +303,22 @@ footer {
 
 .socials a:nth-child(3):hover {
     transform: translateY(-8px) rotate(-6deg);
+}
+
+.skills {
+    margin-top: 6em;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.skills-list span {
+    font-weight: 900;
+    font-size: 1.5em;
+    color: var(--color-accent);
 }
 
 footer img {
